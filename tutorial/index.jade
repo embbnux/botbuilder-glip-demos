@@ -1,0 +1,76 @@
+.chapter(data-title='Learn create a glip bot with botbuilder-glip')
+  .step(data-title='Prerequisites', data-file='README.md', data-highlight='7-12')
+    :markdown
+      ## Prerequisites
+
+      * Install Node.js with version 8
+      * Install [Ngrok](https://ngrok.com/) to create a secure tunnel to local host
+      * Create a [RingCentral developer free account](https://developer.ringcentral.com) to create a new app with platform type -"Server/bot"
+      * Create a Microsoft LUIS account (optional with AI)
+  .step(data-title='Set up the project', data-file='README.md', data-highlight='16-22')
+    :markdown
+      ## Set up the project
+
+      * Clone the demo repo with git.
+      * Install dependencies with NPM or Yarn
+  .step(data-title='Start Ngrok', data-file='README.md', data-highlight='24-29')
+    :markdown
+      ## Start Ngrok
+
+      Start ngrok to get a domain url
+  .step(data-title='Configure the app appropriately', data-file='.env.sample')
+    :markdown
+      ## Configuration
+
+      Create `.env` file in project root folder
+
+      ```
+      $ cp .env.sample .env
+      $ vim .env
+      ```
+
+      Please visit [Developer Portal](http://developer.ringcentral.com/) to apply client ID and secret. And ensure add following redirect URI to your app settings:
+
+      ```
+      YOUR_GLIP_BOT_SERVER/oauth
+      ```
+
+      GLIP_BOT_VERIFICATION_TOKEN is a 32 random chars for webhook request verification.
+  .step(data-title='Use dotenv', data-file='index.js', data-highlight='3, 9')
+    :markdown
+      ## Use dotenv
+
+      Use dotenv to import environments from .env file
+  .step(data-title='Setup cache file', data-file='index.js', data-highlight='4,5,10-14')
+    :markdown
+      ## Setup cache file
+
+      Set cache file to cache bot data, include token and identity
+  .step(data-title='Create BotBuilder Glip connector instance', data-file='index.js', data-highlight='7,25-37')
+    :markdown
+      ## Create Glip Connector instance
+
+      Setup botbuilder and botbuilder-glip
+
+      When replyOnlyMentioned is enabled, bot will only get message when mentioned in multiple people group.
+  .step(data-title='Connect botbuilder with restify server', data-file='index.js', data-highlight='2,16-23,39,40')
+    :markdown
+      ## Connect botbuilder with restify server
+
+      Response oauth and webhook request in Glip Connector
+  .step(data-title='Create BotBuilder instance', data-file='index.js', data-highlight='1,42-52')
+    :markdown
+      ## Create BotBuilder instance with Glip Connector
+
+      Setup botbuilder and botbuilder-glip
+  .step(data-title='Get and send message', data-file='index.js', data-highlight='54-57')
+    :markdown
+      ## Handle glip message
+
+      Get message from session in dialog.
+      Send message glip by `session.send`.
+  .step(data-title='Work with LUIS AI', data-file='bot_with_luis.js', data-highlight='41,42,54-65')
+    :markdown
+      ## Work with LUIS AI
+
+      Useing LUIS to recognize glip message to intent and entities.

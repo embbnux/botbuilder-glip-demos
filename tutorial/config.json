@@ -1,0 +1,6 @@
+{
+    "title": "Learn creating a glip bot with botbuilder-glip",
+    "repo": "embbnux/botbuilder-glip-demos",
+    "description": "A step by step tutorial to get you started with creating a glip with botbuilder-glip in Node.js.",
+    "heroku": false
+}
