@@ -1,0 +1,16 @@
+{
+  "name": "botbuilder-glip-demos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Embbnux Ji",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "botbuilder": "^3.13.1",
+    "botbuilder-glip": "^0.0.5",
+    "dotenv": "^4.0.0",
+    "restify": "^6.3.4"
+  }
+}
